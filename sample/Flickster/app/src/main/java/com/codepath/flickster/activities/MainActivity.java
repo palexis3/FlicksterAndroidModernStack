@@ -37,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> movieList;
     private MoviesAdapter adapter;
 
+    // store the binding
+    // private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         movieRestClient = new MovieRestClient();
         initMovieList();
     }
