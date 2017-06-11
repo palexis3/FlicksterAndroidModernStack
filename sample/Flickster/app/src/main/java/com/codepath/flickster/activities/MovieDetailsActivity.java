@@ -3,9 +3,7 @@ package com.codepath.flickster.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.codepath.flickster.R;
