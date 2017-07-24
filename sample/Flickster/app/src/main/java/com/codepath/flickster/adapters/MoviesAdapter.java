@@ -20,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
+
     public static final String TAG = MoviesAdapter.class.getSimpleName();
 
     private Context context;
