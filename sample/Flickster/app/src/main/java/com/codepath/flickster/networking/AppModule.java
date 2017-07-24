@@ -1,0 +1,22 @@
+package com.codepath.flickster.networking;
+
+
+import android.app.Application;
+
+import javax.inject.Singleton;
+
+import dagger.Provides;
+
+public class AppModule {
+
+    Application mApplication;
+
+    public AppModule(Application application) {
+        mApplication = application;
+    }
+
+    @Provides @Singleton
+    Application providesApplication() {
+        return mApplication;
+    }
+}
