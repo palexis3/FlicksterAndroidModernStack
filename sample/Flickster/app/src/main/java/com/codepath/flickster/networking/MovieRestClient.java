@@ -1,13 +1,12 @@
 package com.codepath.flickster.networking;
 
+import com.codepath.flickster.MovieApp;
 import com.codepath.flickster.models.MovieResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+import javax.inject.Inject;
 
 import retrofit2.Call;
-import retrofit2.Retrofit;
 import retrofit2.Callback;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieRestClient {
 
@@ -15,10 +14,13 @@ public class MovieRestClient {
     private final String BASE_URL = "http://api.themoviedb.org/3/";
 
     // create an implementation of the API endpoints defined by the Interface that we created
-    private MovieApiInterface movieApiInterface;
+    @Inject
+    public MovieApiInterface movieApiInterface;
 
     public MovieRestClient() {
 
+        MovieApp.getApp().getAppComponent().inject(this);
+        /*
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                 .create();
@@ -29,6 +31,7 @@ public class MovieRestClient {
                 .build();
 
         movieApiInterface = client.create(MovieApiInterface.class);
+        */
     }
 
     public void nowPlaying(Callback<MovieResponse> responseHandler) {

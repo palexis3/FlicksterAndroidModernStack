@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.codepath.flickster.MovieApp;
 import com.codepath.flickster.R;
 import com.codepath.flickster.adapters.MoviesAdapter;
 import com.codepath.flickster.models.Movie;
@@ -40,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        movieRestClient = new MovieRestClient();
+        //movieRestClient = new MovieRestClient();
+
+        // telling Dagger we're injecting in this class
+        MovieApp.getApp().getAppComponent().inject(this);
         initMovieList();
     }
 
